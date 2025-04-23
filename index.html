@@ -122,32 +122,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
   <script src="scripts/script.js"></script>
   
-  <script>
-    // Toggle Login
-    function toggleLoginForm() {
-      const form = document.getElementById('loginForm');
-      form.style.display = form.style.display === 'none' ? 'block' : 'none';
-    }
 
-    function submitLogin() {
-      const username = document.getElementById('username').value;
-      document.getElementById('loginForm').style.display = 'none';
-      document.getElementById('userGreeting').textContent = `Welcome, ${username}!`;
-      document.getElementById('userInfo').style.display = 'block';
-    }
-
-    // Collapsible toggle
-    document.querySelector('.collapsible').addEventListener('click', function () {
-      const content = this.nextElementSibling;
-      content.style.display = content.style.display === 'block' ? 'none' : 'block';
-    });
-
-    // Save meal (placeholder)
-    document.getElementById('saveMeal').addEventListener('click', function (e) {
-      e.preventDefault();
-      alert('Meal saved! (Functionality to be implemented)');
-    });
-  </script>
 </body>
 
 </html>
