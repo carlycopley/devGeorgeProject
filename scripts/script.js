@@ -55,17 +55,16 @@ function toggleLoginForm() {
 function submitLogin() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
-  const userGreeting = document.getElementById("userGreeting");
-  userGreeting.textContent = `Welcome, ${username}`;
-  userGreeting.style.backgroundColor = "#f8f9fa";
-
 
   if (username && password) {
     document.getElementById("loginForm").style.display = "none";
     document.getElementById("userInfo").style.display = "block";
-    document.getElementById("userGreeting").textContent = `Welcome, ${username}`;
-    userGreeting.style.backgroundColor = "#f8f9fa"; 
-    
+
+    const userGreeting = document.getElementById("userGreeting");
+    userGreeting.textContent = `Welcome, ${username}`;
+    userGreeting.style.backgroundColor = "#f8f9fa";
+    userGreeting.style.color = "#212529"; // Make text visible
+
     const loginLink = document.getElementById("loginLink");
     loginLink.textContent = "Logout";
     loginLink.setAttribute("onclick", "logout()");
