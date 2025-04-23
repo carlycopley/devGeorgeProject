@@ -1,6 +1,5 @@
 $(document).ready(function () {
-
-  // Save Meal Button Handler
+  // Handle Save Meal button
   $("#saveMeal").on("click", function (e) {
     e.preventDefault();
 
@@ -13,7 +12,7 @@ $(document).ready(function () {
       return;
     }
 
-    // Create new meal log element
+    // Create a new meal entry
     const mealEntry = `
       <strong>${date}</strong>
       <ul class="listItem">
@@ -21,24 +20,23 @@ $(document).ready(function () {
       </ul>
     `;
 
-    // Append to the body (you can create a specific section for new logs)
-    $("form").after(mealEntry);
+    // Append it after the form
+    $("#mealForm").after(mealEntry);
 
-    // Reset form
+    // Reset the form fields
     $("#dateLog").val('');
     $("#mealType").val('');
     $("#mealDetails").val('');
 
-    // Optional status message
+    // Feedback message
     $(this).text("Saved!").prop("disabled", true);
     setTimeout(() => {
       $("#saveMeal").text("Save meal data").prop("disabled", false);
     }, 2000);
   });
-
 });
 
-// Collapsible Section
+// Collapsible section toggle
 document.querySelectorAll(".collapsible").forEach((btn) => {
   btn.addEventListener("click", function () {
     this.classList.toggle("active");
@@ -47,13 +45,13 @@ document.querySelectorAll(".collapsible").forEach((btn) => {
   });
 });
 
-// Toggle Login Form
+// Toggle Login Form visibility
 function toggleLoginForm() {
   const form = document.getElementById("loginForm");
-  form.style.display = (form.style.display === "block") ? "none" : "block";
+  form.style.display = form.style.display === "block" ? "none" : "block";
 }
 
-// Submit Login
+// Submit Login function
 function submitLogin() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
@@ -71,7 +69,7 @@ function submitLogin() {
   }
 }
 
-// Logout Function
+// Logout logic
 function logout() {
   document.getElementById("userInfo").style.display = "none";
   document.getElementById("loginForm").style.display = "block";
