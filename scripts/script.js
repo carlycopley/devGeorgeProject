@@ -60,7 +60,8 @@ function submitLogin() {
     document.getElementById("loginForm").style.display = "none";
     document.getElementById("userInfo").style.display = "block";
     document.getElementById("userGreeting").textContent = `Welcome, ${username}`;
-
+    userGreeting.style.backgroundColor = "#f8f9fa"; 
+    
     const loginLink = document.getElementById("loginLink");
     loginLink.textContent = "Logout";
     loginLink.setAttribute("onclick", "logout()");
