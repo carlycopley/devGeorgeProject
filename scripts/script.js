@@ -56,19 +56,11 @@ function submitLogin() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
-if (username && password) {
-  document.getElementById("loginForm").style.display = "none";
-  document.getElementById("userInfo").style.display = "block";
-  
-  // Correctly access the userGreeting element
-  var userGreeting = document.getElementById("userGreeting");
-  
-  // Set the text content
-  userGreeting.textContent = `Welcome, ${username}`;
-  
-  // Change the background color
-  userGreeting.style.backgroundColor = "#f8f9fa";  // Set light gray background
-}
+  if (username && password) {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("userInfo").style.display = "block";
+    document.getElementById("userGreeting").textContent = Welcome, ${username};
+    userGreeting.style.backgroundColor = "#f8f9fa"; 
     
     const loginLink = document.getElementById("loginLink");
     loginLink.textContent = "Logout";
