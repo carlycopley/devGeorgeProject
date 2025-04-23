@@ -7,7 +7,7 @@ fetch('../mealData.json')
   })
   .then(data => {
       console.log(data);
-      displayParkingData(data.parkingData);
+      displayMealData(data.mealData);
   })
   .catch(error => {
       // Handle errors
