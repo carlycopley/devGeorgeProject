@@ -3,130 +3,149 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>dev-easy</title>
+  <title>Dev George Project</title>
   <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'>
   <link rel="stylesheet" href="styles/style.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap');
+    .content {
+      display: none;
+      padding: 10px;
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+    }
   </style>
-
 </head>
+
 <body>
 
-<!-- navbar source: Dr. Cumbie -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid" id="myNav">
-    <a class="navbar-brand" href="#TODO">Dev George Project</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" target="_blank">Home</a>
-        </li>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid" id="myNav">
+      <a class="navbar-brand" href="#">Dev George Project</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
 
-<li class="nav-item">
-  <a class="nav-link active" id="loginLink" href="javascript:void(0);" onclick="toggleLoginForm()">Login</a>
-  <div id="loginForm" style="display:none;">
-    <label for="username">Username:</label>
-    <input type="text" id="username" placeholder="Type here">
-    <br><br>
-    <label for="password">Password:</label>
-    <input type="password" id="password" placeholder="Type here">
-    <br><br>
-    <button type="button" onclick="submitLogin()">Submit</button>
-  </div>
-</li>
+          <!-- Login -->
+          <li class="nav-item">
+            <a class="nav-link active" href="javascript:void(0);" onclick="toggleLoginForm()">Login</a>
+            <div id="loginForm" style="display:none;">
+              <label for="username">Username:</label>
+              <input type="text" id="username" placeholder="Type here"><br><br>
+              <label for="password">Password:</label>
+              <input type="password" id="password" placeholder="Type here"><br><br>
+              <button type="button" onclick="submitLogin()">Submit</button>
+            </div>
+          </li>
 
-<!-- Placeholder for displaying the username in the navbar -->
-<li class="nav-item" id="userInfo" style="display:none;">
-  <span class="nav-link" id="userGreeting"></span>
-</li>
+          <li class="nav-item" id="userInfo" style="display:none;">
+            <span class="nav-link" id="userGreeting"></span>
+          </li>
 
-
-
-
-        <li class="nav-item">
-          <a class="nav-link active" href="https://github.com/carlycopley/devCharlieProject/blob/main/pictures/devCharlieWireframe.jpg?raw=true" target="_blank">Wireframe</a>
-        </li>
-      </ul>
+          <li class="nav-item">
+            <a class="nav-link active" href="https://github.com/carlycopley/devCharlieProject/blob/main/pictures/devCharlieWireframe.jpg?raw=true" target="_blank">Wireframe</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
+
+  <h1 class="welcome"><strong>🦭Welcome to Meal Tracker🦭</strong></h1>
+  <h3><em>Record your daily meals and keep track of your eating habits!</em></h3>
+
+  <!-- Collapsible Section -->
+  <button type="button" class="collapsible">CLICK ME FOR INFORMATIVE LINKS</button>
+  <div class="content">
+    <h4 class="topLinks"><a href="https://muschealth.org/medical-services/weight-loss-surgery/wls/2024/01/exploring-the-benefits-of-tracking-food-intake" target="_blank">Why Track Your Meals?</a></h4>
+    <h4 class="topLinks"><a href="https://www.foodnetwork.com/healthy/packages/healthy-every-week/quick-and-simple/healthy-dinners-in-40-minutes-or-less" target="_blank">Meal Inspiration</a></h4>
   </div>
-</nav>
+  <hr>
 
-<h1 id="welcome" class="welcome"><strong>🦭Welcome to Meal Tracker🦭</strong></h1>
-<h3 id="description"><em>Record your daily meals and keep track of your eating habits!</em></h3>
+  <!-- Meal Log Form -->
+  <form>
+    <label for="dateLog" class="directions">Date:</label>
+    <input type="date" id="dateLog" placeholder="enter date"><br>
 
-<!-- NEW CODE -->
-<button type="button" class="collapsible">
-  CLICK ME FOR INFORMATIVE LINKS
-<div class="content">
-  <h4 id="whyTrackMeals" class="topLinks"><a href="https://muschealth.org/medical-services/weight-loss-surgery/wls/2024/01/exploring-the-benefits-of-tracking-food-intake" target="_blank">Why Track Your Meals?</a>
+    <label for="mealType" class="directions">Meal Type:</label><br>
+    <input type="text" id="mealType" name="mealType" placeholder="Enter your meal type"><br>
 
-    <h4 id="mealInspo" class="topLinks"><a href="https://www.foodnetwork.com/healthy/packages/healthy-every-week/quick-and-simple/healthy-dinners-in-40-minutes-or-less" target="_blank">Meal Inspiration</a></h4>
+    <label for="mealDetails" class="directions">What did you eat for this meal?</label><br>
+    <textarea id="mealDetails" rows="4" cols="50" placeholder="Describe your meal..."></textarea><br>
 
-</div>
-<hr>
+    <button id="saveMeal" class="btn btn-outline-primary">Save meal data</button>
+  </form>
+  <hr>
 
-<!-- input new meal log -->
-<form>
+  <!-- Meal Log List -->
+  <section>
+    <h2><strong>This is a list of my meals at </strong><a href="https://una.edu/" target="_blank">UNA:</a></h2>
 
-  <label for="dateLog" class="directions">Date:</label>
-  <input type="date" id="dateLog" placeholder="enter date">
+    <strong>12 January</strong>
+    <ul class="listItem">
+      <li>Breakfast: Ham, egg, and cheese sandwich</li>
+      <li>Lunch: n/a</li>
+      <li>Dinner: 3 slices of pizza</li>
+      <li>Snack: Summer sausage and Babybel cheese</li>
+    </ul>
+
+    <strong>13 January</strong>
+    <ul class="listItem">
+      <li>Breakfast: Tater tots, sausage, egg, fruit, coffee</li>
+      <li>Lunch: Banana</li>
+      <li>Dinner: Moe's bowl</li>
+    </ul>
+
+    <strong>14 January</strong>
+    <ul class="listItem">
+      <li>Breakfast: Potato wedges, waffle, oatmeal, coffee</li>
+      <li>Lunch: Blueberry muffin and salmon poke bowl</li>
+      <li>Dinner: Cookout burger and cheese curds</li>
+    </ul>
+  </section>
+
+  <!-- Seal GIFs -->
+  <img alt="sealGif1" src="https://media4.giphy.com/media/13AK7klLVE3h4Y/giphy.gif">
+  <img alt="sealGif2" src="https://media3.giphy.com/media/l4FGsIFhXqhcqDfHO/giphy.gif">
+  <img alt="sealGif3" src="https://media1.giphy.com/media/Kc92InnqBYJKZpqXOt/giphy.gif">
+  <img alt="sealGif4" src="https://media0.giphy.com/media/1dWKmBSsRWCVM3ay8U/giphy.gif">
   <br>
 
-  <label for="mealType" class="directions">Meal Type:</label><br>
-  <input type="text" id="mealType" name="mealType" value="enter your meal type">
-  <br>
+  <p id="bottomLink">Link to the <a href="https://codepen.io/carlycopley/pen/GgKdYMe" target="_blank">original CodePen</a></p>
+  <p id="wireframe">Link to the <a href="https://github.com/carlycopley/mealAppWireframe/blob/main/mealAppWireframe.jpg?raw=true" target="_blank">wireframe</a></p>
 
-  <label for="ate" class="directions">What did you eat for this meal?</label><br>
-  <textarea id="mealType" rows="4" cols="50">
-  </textarea>
-  <button id="saveMeal" class="btn btn-outline-primary">save meal data</button>
-</form>
-<hr>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+  <script>
+    // Toggle Login
+    function toggleLoginForm() {
+      const form = document.getElementById('loginForm');
+      form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    }
 
-<!-- list of saved meal stuff -->
+    function submitLogin() {
+      const username = document.getElementById('username').value;
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('userGreeting').textContent = `Welcome, ${username}!`;
+      document.getElementById('userInfo').style.display = 'block';
+    }
 
-  <h2><strong>This is a list of my meals at </strong><a href="https://una.edu/" target="_blank">UNA:</a></h2>
+    // Collapsible toggle
+    document.querySelector('.collapsible').addEventListener('click', function () {
+      const content = this.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
 
-  <strong>12 January</strong>
-  <ul id="firstLog" class="listItem">
-    <li id="breakfast">Breakfast: Ham, egg, and cheese sandwich</li>
-    <li>Lunch: n/a</li>
-    <li id>Dinner: 3 slices of pizza</li>
-    <li>Snack: Summer sausage and Babybel cheese</li>
-  </ul>
-  <strong>13 January</strong>
-  <ul id="secondLog" class="listItem">
-    <li>Breakfast: Tater tots, sausage, egg, fruit, coffee</li>
-    <li>Lunch: Banana</li>
-    <li>Dinner: Moe's bowl</li>
-  </ul>
-  <strong>14 January</strong>
-  <ul id="thirdLog" class="listItem">
-    <li>Breakfast: Potato wedges, waffle, oatmeal, coffee</li>
-    <li>Lunch: Blueberry muffin and salmon poke bowl</li>
-    <li>Dinner: Cookout burger and cheese curds</li>
-  </ul>
-
-  <!-- seal GIFs -->
-  <img alt="sealGif1" src='https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGJ6NTFiZWx6NDV5enR6NnNoZmQwczNsajV1dWtubmd6dGtoYWRjZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13AK7klLVE3h4Y/giphy.gif'>
-  <img alt="sealGif2" src='https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmgydjByb3FqaXZ5YzBncml0Z3o2Y2o5MTk1aXkzZGVpZHRocnA5NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4FGsIFhXqhcqDfHO/giphy.gif'>
-  <img alt="sealGif3" src='https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHYwZ3czMzRmbHZwNDl1Zzhzb2MyZjExeHVwMjN5ejcwdW9jd3J1eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Kc92InnqBYJKZpqXOt/giphy.gif'>
-  <img alt="sealGif4" src='https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2NibmUwc2Nod3dzazF0ZHIyaXplYjg0OHF6OThpbzRmbGNzNHB0ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1dWKmBSsRWCVM3ay8U/giphy.gif'>
-  <br>
-
-
-
-<p id="bottomLink">Link to the <a href="https://codepen.io/carlycopley/pen/GgKdYMe" target="_blank">original CodePen</a></p>
-
-<p id="wireframe">Link to the <a href="https://github.com/carlycopley/mealAppWireframe/blob/main/mealAppWireframe.jpg?raw=true" target="_blank">wireframe</a>
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js'></script>
-<script src="scripts/script.js"></script>
+    // Save meal (placeholder)
+    document.getElementById('saveMeal').addEventListener('click', function (e) {
+      e.preventDefault();
+      alert('Meal saved! (Functionality to be implemented)');
+    });
+  </script>
 </body>
+
 </html>
