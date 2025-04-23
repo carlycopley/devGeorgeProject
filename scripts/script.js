@@ -92,7 +92,8 @@ function displayParkingData(parkingData) {
         console.log(`time: ${log.time}`);
         console.log(`note: ${log.note}`);
 
-        document.getElementById('body').innerHTML += `date: ${log.date}, time: ${log.time}, note: ${log.note} <br>`; 
+        document.getElementById('dataSpot').innerHTML += `<li class="list-group-item"><strong>${log.date}, ${log.time}: </strong>${log.note}</li>`; 
 
  }
 }
+
