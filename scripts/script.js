@@ -85,9 +85,9 @@ function logout() {
 
 
 
-function displayParkingData(parkingData) {
+function displayMealData(mealData) {
    
-    for (const log of parkingData) {
+    for (const log of mealData) {
         console.log(`date: ${log.date}`);
         console.log(`time: ${log.time}`);
         console.log(`note: ${log.note}`);
