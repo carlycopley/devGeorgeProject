@@ -11,8 +11,14 @@ h1 {
 }
 
 /*welcome font*/
-.welcome {
+.bigText {
   font-family: 'Sixtyfour Convergence', serif;
+}
+
+.welcome {
+  color: black;
+  text-align: center;
+  margin-top: 1em;
 }
 
 /*add grid background and font*/
