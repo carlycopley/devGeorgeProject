@@ -82,3 +82,17 @@ function logout() {
   loginLink.textContent = "Login";
   loginLink.setAttribute("onclick", "toggleLoginForm()");
 }
+
+
+
+function displayParkingData(parkingData) {
+   
+    for (const log of parkingData) {
+        console.log(`date: ${log.date}`);
+        console.log(`time: ${log.time}`);
+        console.log(`note: ${log.note}`);
+
+        document.getElementById('body').innerHTML += `date: ${log.date}, time: ${log.time}, note: ${log.note} <br>`; 
+
+ }
+}
