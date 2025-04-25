@@ -1,6 +1,6 @@
 <h1>Created by Carly Copley</h1>
-<h2>25 April 2025/h2>
-<h2>>CIS 376</h2
+<h2>25 April 2025</h2>
+<h2>CIS 376</h2
 
 <h2>This app was created to log the meals the user has eaten. 
 There are many benefits to logging your meals especially when you are on a diet or calorie deficit. 
