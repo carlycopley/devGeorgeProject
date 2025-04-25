@@ -1,3 +1,7 @@
+Created by Carly Copley
+25 April 2025
+CIS 376
+
 This app was created to log the meals the user has eaten. 
 There are many benefits to logging your meals especially when you are on a diet or calorie deficit. 
 With the help of this app, you can keep track of and improve your eating habits!
