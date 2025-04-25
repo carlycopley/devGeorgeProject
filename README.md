@@ -10,6 +10,7 @@ With the help of this app, you can keep track of and improve your eating habits!
 <img src="https://3.bp.blogspot.com/-BQSEvAqkr0w/VsVQASueNlI/AAAAAAAABks/Rmabc2KPrhA/s1600/output.png">
 
 <h2>This is my HTML code for my login:</h2>
+
 ```html
           <li class="nav-item">
             <a class="nav-link active" id="loginLink" href="javascript:void(0);" onclick="toggleLoginForm()">Login</a>
